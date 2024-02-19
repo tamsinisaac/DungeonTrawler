@@ -9,7 +9,7 @@ public class StairTravel : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (col("Stairs"))
+        
         {
             SceneManager.LoadScene("Level2");
         }
