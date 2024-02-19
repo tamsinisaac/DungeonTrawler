@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //Nicole adding for load level function
 
 /*
  * Responsible for building a Unity level from an evolved TileGrid
@@ -25,10 +26,14 @@ public class Generator : MonoBehaviour
 
     private bool active = false;
 
+    
+
     public void Generate()
     {
         if (!active)
         {
+            // load the nextlevel
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             active = true;
             EvolveDungeon();
             BuildDungeon();
