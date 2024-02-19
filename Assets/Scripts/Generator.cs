@@ -32,7 +32,7 @@ public class Generator : MonoBehaviour
     {
         if (!active)
         {
-            // Nicole addition: load the nextlevel
+            // load the nextlevel
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             active = true;
             EvolveDungeon();
@@ -174,8 +174,7 @@ public class Generator : MonoBehaviour
 
         text.Append("Density: " + density);
         text.Append(" (Fitness: " + densityFitness + ")");
-        
-        
+
         List<Vector2Int> path = grid.GetPath();
         if (path == null)
         {
