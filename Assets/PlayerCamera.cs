@@ -22,12 +22,16 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float inputX = Input.GetAxis("Mouse X") * mouseSensitiveity;
-        float inputY = Input.GetAxis("Mouse Y") * mouseSensitiveity;
+        //collect mouse input
+
+        float inputX = Input.GetAxis("Mouse X")*mouseSensitiveity;
+        float inputY = Input.GetAxis("Mouse Y")*mouseSensitiveity;
+
+        //rotate the camera around its local x axis
 
         cameraVerticalRotation -= inputY;
         cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
-        transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
+        transform.localEulerAngles = Vector3.right*cameraVerticalRotation;
 
         player.Rotate(Vector3.up * inputX);
 
