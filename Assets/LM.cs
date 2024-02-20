@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
-
-public class StairTravel : MonoBehaviour
+public class LM : MonoBehaviour
 {
+    public GameObject Diamond;
     private void OnTriggerEnter(Collider other)
     {
+        if (Diamond != null)
+
         if (other.gameObject.CompareTag("Stairs"))
-        {
-            SceneManager.LoadScene("Dungeon2");
-        }
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
     }
 }
