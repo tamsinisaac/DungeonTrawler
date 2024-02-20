@@ -9,9 +9,9 @@ public class StairTravel : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Stairs"))
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Dungeon2");
         }
     }
 }
